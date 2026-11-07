@@ -41,7 +41,7 @@ function BullBear() {
 
 function Volatility() {
   const calm = Array.from({ length: 41 }, (_, i) => [20 + i * 7, 52 + Math.sin(i * 0.8) * 5 + Math.sin(i * 2.1) * 2]);
-  const wild = Array.from({ length: 41 }, (_, i) => [20 + i * 7, 146 + Math.sin(i * 0.7) * 22 + Math.sin(i * 1.9) * 14 + Math.cos(i * 3.3) * 6]);
+  const wild = Array.from({ length: 41 }, (_, i) => [20 + i * 7, 158 + Math.sin(i * 0.7) * 17 + Math.sin(i * 1.9) * 11 + Math.cos(i * 3.3) * 4]);
   return (
     <Svg label="변동성이 작으면 잔잔하게, 크면 크게 출렁인다">
       <Box x={8} y={8} w={304} h={86} fill={C.soft} stroke="none" r={12} />
@@ -54,7 +54,7 @@ function Volatility() {
         잔잔한 호수
       </T>
       <Box x={8} y={102} w={304} h={90} fill={C.soft} stroke="none" r={12} />
-      <rect x={20} y={110} width={280} height={74} fill={C.orange} fillOpacity={0.12} />
+      <rect x={20} y={126} width={280} height={64} fill={C.orange} fillOpacity={0.12} />
       <path d={linePath(wild)} fill="none" stroke={C.orange} strokeWidth={2.2} strokeLinejoin="round" />
       <T x={20} y={118} size={11.5} weight={800} anchor="start" color={C.orange}>
         변동성 큼
@@ -116,7 +116,7 @@ function CircuitBreaker() {
       <PauseIcon x={110} y={lv[8] - 16} c={C.gold} />
       <PauseIcon x={173} y={lv[15] - 16} c={C.orange} />
       <rect x={196} y={lv[20] - 8} width={16} height={16} rx={3} fill={C.down} />
-      <T x={60} y={176} size={10} color={C.muted}>
+      <T x={16} y={190} size={10} color={C.muted} anchor="start">
         공포를 식히는 비상 브레이크
       </T>
     </Svg>
@@ -278,13 +278,13 @@ function Ant({ cx, cy }) {
 }
 
 function Investors() {
-  const base = 124;
+  const base = 128;
   const cols = [
-    { x: 58, name: '외국인', v: 1200, icon: <Globe cx={58} cy={28} r={16} /> },
-    { x: 160, name: '기관', v: -500, icon: <Building x={144} y={10} w={32} h={36} color={C.accent} /> },
-    { x: 262, name: '개인 (개미)', v: -700, icon: <Ant cx={262} cy={30} /> },
+    { x: 58, name: '외국인', v: 1200, icon: <Globe cx={58} cy={24} r={15} /> },
+    { x: 160, name: '기관', v: -500, icon: <Building x={145} y={6} w={30} h={34} color={C.accent} /> },
+    { x: 262, name: '개인 (개미)', v: -700, icon: <Ant cx={262} cy={26} /> },
   ];
-  const k = 44 / 1200;
+  const k = 40 / 1200;
   return (
     <Svg label="외국인이 순매수하면 다른 투자자 그룹은 그만큼 순매도. 합계는 0에 가깝다">
       {cols.map((c) => {
@@ -293,7 +293,7 @@ function Investors() {
         return (
           <g key={c.name}>
             {c.icon}
-            <T x={c.x} y={58} size={11.5} weight={800}>
+            <T x={c.x} y={52} size={11.5} weight={800}>
               {c.name}
             </T>
             <rect x={c.x - 18} y={up ? base - h : base} width={36} height={h} rx={4} fill={up ? C.up : C.down} />
@@ -308,8 +308,8 @@ function Investors() {
         );
       })}
       <line x1={14} y1={base} x2={306} y2={base} stroke={C.line} strokeWidth={1.5} />
-      <Box x={20} y={168} w={280} h={26} fill={C.soft} stroke="none" r={8} />
-      <T x={160} y={181} size={10} weight={600} color={C.ink2}>
+      <Box x={20} y={172} w={280} h={24} fill={C.soft} stroke="none" r={8} />
+      <T x={160} y={184} size={10} weight={600} color={C.ink2}>
         누가 사면 누가 팔아요 → 세 그룹을 합치면 ≈ 0
       </T>
     </Svg>

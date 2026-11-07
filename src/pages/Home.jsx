@@ -78,13 +78,13 @@ export default function Home() {
       {/* 추천 순서 */}
       <section>
         <SectionTitle right={<span className="text-xs font-semibold text-muted">처음이라면 이 순서로</span>}>입문 코스 10단계</SectionTitle>
-        <ol className="grid gap-2 sm:grid-cols-2">
+        <ol className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {STARTER_PATH.map((id, i) => {
             const t = TERM_MAP[id];
             const done = learned.includes(id);
             const isNext = id === nextStarter;
             return (
-              <li key={id}>
+              <li key={id} className="min-w-0">
                 <Link
                   to={`/t/${id}`}
                   className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 transition hover:border-accent/50 ${

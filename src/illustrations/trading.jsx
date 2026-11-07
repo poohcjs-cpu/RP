@@ -128,11 +128,11 @@ function MarketLimit() {
       <circle cx={250} cy={46} r={16} fill={C.card} stroke={C.ink2} strokeWidth={2} />
       <line x1={250} y1={46} x2={250} y2={36} stroke={C.ink2} strokeWidth={2} strokeLinecap="round" />
       <line x1={250} y1={46} x2={258} y2={50} stroke={C.ink2} strokeWidth={2} strokeLinecap="round" />
-      <T x={250} y={76} size={10} weight={700} color={C.ink2}>
-        그 가격 올 때까지 대기
+      <T x={250} y={78} size={10} weight={700} color={C.ink2}>
+        올 때까지 대기
       </T>
-      <T x={146} y={80} size={9.5} color={C.muted}>
-        가격 ✓ · 체결은 보장 ✕
+      <T x={86} y={80} size={9.5} color={C.muted} anchor="start">
+        가격 보장 O · 체결 보장 X
       </T>
       {/* 시장가 */}
       <Pill x={44} y={120} text="시장가" color={C.orange} />
@@ -142,8 +142,8 @@ function MarketLimit() {
       <T x={250} y={180} size={10} weight={700} color={C.ink2}>
         즉시 체결
       </T>
-      <T x={146} y={176} size={9.5} color={C.muted}>
-        체결 ✓ · 가격은 보장 ✕
+      <T x={86} y={176} size={9.5} color={C.muted} anchor="start">
+        체결 보장 O · 가격 보장 X
       </T>
     </Svg>
   );

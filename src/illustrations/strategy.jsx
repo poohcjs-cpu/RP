@@ -22,8 +22,8 @@ function ReturnRate() {
       <T x={160} y={166} size={10.5} weight={700}>
         손실 후
       </T>
-      <Arrow x1={196} y1={100} x2={230} y2={60} color={C.upInk} width={2.2} />
-      <Pill x={214} y={108} text="+100% 필요!" color={C.up} size={11} />
+      <Arrow x1={196} y1={104} x2={226} y2={72} color={C.upInk} width={2.2} />
+      <Pill x={208} y={46} text="+100% 필요!" color={C.up} size={11} />
       <rect x={238} y={base - 50 * k} width={52} height={50 * k} rx={5} fill={C.down} fillOpacity={0.55} />
       <rect x={238} y={base - 100 * k} width={52} height={50 * k} rx={5} fill={C.up} fillOpacity={0.85} />
       <T x={264} y={base - 75 * k} size={10} weight={800} color="#fff">
@@ -77,9 +77,9 @@ function Diversification() {
             </g>
           ) : (
             <g>
-              <Egg cx={cx - 7} cy={94} s={0.75} />
-              <Egg cx={cx + 7} cy={96} s={0.75} />
               <Basket cx={cx} y={100} w={36} h={22} />
+              <Egg cx={cx - 7} cy={98} s={0.75} />
+              <Egg cx={cx + 7} cy={100} s={0.75} />
             </g>
           )}
         </g>
@@ -108,7 +108,7 @@ function AvgPrice() {
     <Svg label="1만 원에 10주, 8천 원에 10주를 사면 평균단가는 9천 원">
       <path d={path} fill="none" stroke={C.ink2} strokeWidth={2.2} />
       <HLine x1={14} x2={306} y={y(9000)} color={C.accent} width={2} />
-      <Pill x={250} y={y(9000) + 16} text="평균단가 9,000원" color={C.accentBg} size={10.5} />
+      <Pill x={262} y={y(9000) + 18} text="평균단가 9,000원" color={C.accentBg} size={10.5} />
       <circle cx={60} cy={y(10000)} r={7} fill={C.up} />
       <T x={60} y={y(10000) - 30} size={10.5} weight={800} color={C.upInk}>
         1차 매수
@@ -117,10 +117,10 @@ function AvgPrice() {
         10주 × 10,000원
       </T>
       <circle cx={180} cy={y(8000)} r={7} fill={C.up} />
-      <T x={180} y={y(8000) + 18} size={10.5} weight={800} color={C.upInk}>
+      <T x={104} y={y(8000) + 2} size={10.5} weight={800} color={C.upInk}>
         2차 매수 (물타기)
       </T>
-      <T x={180} y={y(8000) + 33} size={10} color={C.ink2}>
+      <T x={104} y={y(8000) + 17} size={10} color={C.ink2}>
         10주 × 8,000원
       </T>
       <circle cx={300} cy={y(9500)} r={4.5} fill={C.ink2} />
@@ -214,7 +214,7 @@ function Compound() {
           {t === 0 ? '시작' : `${t}년`}
         </T>
       ))}
-      <T x={X(30) - 4} y={Y(761) + 8} size={11} weight={800} color={C.accent} anchor="end">
+      <T x={X(26)} y={Y(761) + 2} size={11} weight={800} color={C.accent} anchor="end">
         복리 761
       </T>
       <T x={X(30) - 4} y={Y(310) - 12} size={10.5} weight={700} color={C.ink2} anchor="end">
@@ -223,7 +223,7 @@ function Compound() {
       <T x={X(0)} y={Y(100) - 12} size={9.5} color={C.ink2} anchor="start">
         원금 100
       </T>
-      <T x={18} y={16} size={10} color={C.muted} anchor="start">
+      <T x={160} y={194} size={9.5} color={C.muted}>
         연 7% 가정 · 눈덩이처럼 갈수록 빨리 커져요
       </T>
     </Svg>
@@ -248,7 +248,7 @@ function Leverage() {
         200만
       </T>
       <rect x={110} y={110} width={28} height={22} rx={5} fill={C.gold} transform="rotate(18.7 124 132)" />
-      <T x={120} y={156} size={9.5} weight={700} color={C.ink2}>
+      <T x={104} y={158} size={9.5} weight={700} color={C.ink2}>
         내 돈 100만
       </T>
       <T x={76} y={176} size={10.5} weight={800}>

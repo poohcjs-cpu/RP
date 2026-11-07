@@ -178,15 +178,15 @@ function GoldenDeadCross() {
             <circle cx={cx} cy={cy} r={9} fill="none" stroke={c.golden ? C.gold : C.ink2} strokeWidth={2.5} />
             {c.golden ? (
               <>
-                <Pill x={cx} y={cy - 46} text="골든크로스" color={C.gold} size={10.5} />
-                <T x={cx} y={cy - 28} size={9.5} color={C.upInk} weight={700}>
+                <Pill x={cx - 26} y={cy - 50} text="골든크로스" color={C.gold} size={10.5} />
+                <T x={cx - 26} y={cy - 32} size={9.5} color={C.upInk} weight={700}>
                   상승 신호로 해석
                 </T>
               </>
             ) : (
               <>
-                <Pill x={cx} y={cy - 40} text="데드크로스" color={C.ink2} size={10.5} />
-                <T x={cx} y={cy - 22} size={9.5} color={C.downInk} weight={700}>
+                <Pill x={cx + 32} y={cy - 56} text="데드크로스" color={C.ink2} size={10.5} />
+                <T x={cx + 32} y={cy - 38} size={9.5} color={C.downInk} weight={700}>
                   하락 신호로 해석
                 </T>
               </>

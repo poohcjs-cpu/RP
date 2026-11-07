@@ -54,7 +54,7 @@ export function Stat({ label, value, tone = 'ink', sub }) {
   return (
     <div className="rounded-xl bg-soft px-3 py-2.5">
       <div className="text-xs font-semibold text-muted">{label}</div>
-      <div className={`mt-0.5 text-lg font-extrabold tabular-nums leading-tight ${toneClass}`}>{value}</div>
+      <div className={`mt-0.5 text-base font-extrabold tabular-nums leading-tight sm:text-lg ${toneClass}`}>{value}</div>
       {sub && <div className="mt-0.5 text-xs text-ink-2">{sub}</div>}
     </div>
   );

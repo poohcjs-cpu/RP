@@ -135,7 +135,7 @@ function KospiKosdaq() {
 }
 
 function IndexIll() {
-  const vals = [3, -1, 2, 1, -2, 4, 1, -1, 2, 0.5, -0.5, 3];
+  const vals = [3, -1, 2, 1, -2, 4, 1, -1, 2, 1, -2, 3];
   return (
     <Svg label="여러 종목의 등락을 평균 낸 숫자가 주가지수">
       {vals.map((v, i) => {
@@ -274,10 +274,10 @@ function CommonPreferred() {
       {rows.map((r, i) => (
         <g key={i}>
           {r.icon(x + 26, 100 + i * 44)}
-          <T x={x + 48} y={100 + i * 44} size={11.5} weight={700} anchor="start">
+          <T x={x + 44} y={100 + i * 44} size={11} weight={700} anchor="start">
             {r.text}
           </T>
-          {r.ok ? <Check x={x + 120} y={100 + i * 44} s={0.85} /> : <Cross x={x + 120} y={100 + i * 44} s={0.85} />}
+          {r.ok ? <Check x={x + 126} y={100 + i * 44} s={0.8} /> : <Cross x={x + 126} y={100 + i * 44} s={0.8} />}
         </g>
       ))}
     </g>

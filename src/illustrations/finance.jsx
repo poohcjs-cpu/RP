@@ -136,7 +136,14 @@ function DebtRatio() {
         return (
           <g key={z.label}>
             <path d={arcPath(cx, cy, r, ang(z.a) - 1, ang(z.b) + 1)} fill="none" stroke={z.c} strokeWidth={18} />
-            <T x={cx + (r + 22) * Math.cos(la)} y={cy - (r + 22) * Math.sin(la) + 4} size={10.5} weight={700} color={C.ink2}>
+            <T
+              x={cx + (r + 16) * Math.cos(la)}
+              y={cy - (r + 16) * Math.sin(la)}
+              size={10.5}
+              weight={700}
+              color={C.ink2}
+              anchor={z.lp < 100 ? 'end' : z.lp > 200 ? 'start' : 'middle'}
+            >
               {z.label}
             </T>
           </g>

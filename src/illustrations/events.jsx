@@ -77,8 +77,11 @@ function BonusIssue() {
         1주 × 10,000원
       </T>
       <Arrow x1={138} y1={88} x2={182} y2={88} color={C.ink2} />
-      <T x={160} y={72} size={9.5} color={C.ink2}>
-        1주당 1주 무상
+      <T x={160} y={60} size={9.5} color={C.ink2}>
+        1주당
+      </T>
+      <T x={160} y={73} size={9.5} color={C.ink2}>
+        1주 무상
       </T>
       <Pizza cx={248} cy={88} r={54} slices={8} colors={{ 0: mine, 1: mine }} toppings={false} />
       <T x={248} y={160} size={11} weight={800}>
