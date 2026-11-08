@@ -1,3 +1,140 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* 색상 규칙: 한국 증시 관례에 따라 빨강 = 상승(매수), 파랑 = 하락(매도).
+   그래서 앱의 대표색(버튼·강조)은 오해가 없도록 보라색을 씁니다. */
+:root {
+  color-scheme: light;
+  --c-bg: #f6f6f4;
+  --c-card: #ffffff;
+  --c-ink: #191917;
+  --c-ink-2: #52514e;
+  --c-muted: #7d7c77;
+  --c-line: #e4e3df;
+  --c-soft: #f0efec;
+
+  --c-up: #e34948;
+  --c-up-ink: #c03332;
+  --c-up-soft: #fdeaea;
+  --c-down: #2a78d6;
+  --c-down-ink: #1d62b5;
+  --c-down-soft: #e4eefb;
+
+  --c-accent: #5a48d0;
+  --c-accent-bg: #5a48d0;
+  --c-accent-soft: #edeafb;
+  --c-gold: #eda100;
+  --c-gold-ink: #946400;
+  --c-gold-soft: #fdf3dc;
+  --c-aqua: #1baf7a;
+  --c-aqua-ink: #0f7a54;
+  --c-aqua-soft: #e1f5ec;
+  --c-orange: #eb6834;
+  --c-orange-soft: #fdebe3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --c-bg: #121211;
+    --c-card: #1c1c1a;
+    --c-ink: #f0efec;
+    --c-ink-2: #c3c2b7;
+    --c-muted: #93928b;
+    --c-line: #31312e;
+    --c-soft: #262624;
+
+    --c-up: #e66767;
+    --c-up-ink: #f28b8b;
+    --c-up-soft: #3a2222;
+    --c-down: #3987e5;
+    --c-down-ink: #7db0f0;
+    --c-down-soft: #1a2a40;
+
+    --c-accent: #a59cf0;
+    --c-accent-bg: #6a5be0;
+    --c-accent-soft: #2a2645;
+    --c-gold: #c98500;
+    --c-gold-ink: #e8b54a;
+    --c-gold-soft: #33290f;
+    --c-aqua: #199e70;
+    --c-aqua-ink: #4fc79a;
+    --c-aqua-soft: #15302a;
+    --c-orange: #d95926;
+    --c-orange-soft: #36221a;
+  }
+}
+
+@theme inline {
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+
+  --color-bg: var(--c-bg);
+  --color-card: var(--c-card);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-soft: var(--c-soft);
+  --color-up: var(--c-up);
+  --color-up-ink: var(--c-up-ink);
+  --color-up-soft: var(--c-up-soft);
+  --color-down: var(--c-down);
+  --color-down-ink: var(--c-down-ink);
+  --color-down-soft: var(--c-down-soft);
+  --color-accent: var(--c-accent);
+  --color-accent-bg: var(--c-accent-bg);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-gold: var(--c-gold);
+  --color-gold-ink: var(--c-gold-ink);
+  --color-gold-soft: var(--c-gold-soft);
+  --color-aqua: var(--c-aqua);
+  --color-aqua-ink: var(--c-aqua-ink);
+  --color-aqua-soft: var(--c-aqua-soft);
+  --color-orange: var(--c-orange);
+  --color-orange-soft: var(--c-orange-soft);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 그림 속 글자 */
+svg text {
+  font-family: var(--font-sans);
+}
+
+/* 슬라이더 */
+input[type="range"] {
+  accent-color: var(--c-accent-bg);
+  width: 100%;
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.animate-pop { animation: pop-in 0.25s ease-out both; }
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.anim-float { animation: float-y 2.4s ease-in-out infinite; }
+
+@keyframes blink-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.anim-blink { animation: blink-soft 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pop, .anim-float, .anim-blink { animation: none; }
+}
