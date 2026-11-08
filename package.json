@@ -7,13 +7,19 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:app": "vite build --base=./ --outDir dist-app",
+    "android:sync": "npm run build:app && cap sync android",
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
+    "@capacitor/core": "^8.6.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
     "@eslint/js": "^9.33.0",
     "@tailwindcss/cli": "^4.1.12",
     "@tailwindcss/postcss": "^4.1.12",

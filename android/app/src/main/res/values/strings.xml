@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">주식 용어 그림사전</string>
+    <string name="title_activity_main">주식 용어 그림사전</string>
+    <string name="package_name">io.github.poohcjscpu.stockterms</string>
+    <string name="custom_url_scheme">io.github.poohcjscpu.stockterms</string>
+</resources>

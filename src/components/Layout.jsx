@@ -61,7 +61,7 @@ export default function Layout({ routeName, children }) {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded-lg focus:bg-card focus:px-3 focus:py-2">
         본문으로 건너뛰기
       </a>
-      <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 backdrop-blur-md">
+      <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 pt-[env(safe-area-inset-top)] backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-3xl items-center gap-3 px-4">
           <Link to="/" className="flex items-center gap-2" aria-label="주식 용어 그림사전 홈">
             <Logo />

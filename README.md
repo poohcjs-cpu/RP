@@ -39,3 +39,20 @@ src/
 용어를 추가하려면 `src/data/terms.js`에 항목을 넣고, 같은 `id`로 `src/illustrations/`에 그림 컴포넌트를 등록하면 돼요.
 
 > 교육용 자료이며 투자 권유가 아니에요. 세율 · 거래 제도는 바뀔 수 있어요.
+
+## Android 앱(APK) 만들기
+
+[Capacitor](https://capacitorjs.com)로 같은 웹 앱을 Android 앱으로 감쌌어요. 앱 안에 화면이 모두 들어 있어서 인터넷 없이도 동작해요.
+
+준비물: Node.js, JDK 21, Android SDK (platform 36, build-tools 36)
+
+```bash
+npm install
+npm run android:sync          # 앱용 웹 빌드(dist-app) → android 프로젝트로 복사
+cd android && ./gradlew assembleDebug     # 테스트용 APK
+# 결과: android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+릴리스(서명된) APK가 필요하면 `android/keystore.properties`에 서명 키 정보를 넣고 `npm run android:apk`를 실행하세요.
+(`storeFile`, `storePassword`, `keyAlias`, `keyPassword` — 이 파일과 키 파일은 git 에 올리지 않아요.)
+같은 앱을 업데이트하려면 처음 설치한 APK와 **같은 키**로 서명해야 해요.

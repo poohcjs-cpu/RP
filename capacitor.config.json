@@ -1,0 +1,14 @@
+{
+  "appId": "io.github.poohcjscpu.stockterms",
+  "appName": "주식 용어 그림사전",
+  "webDir": "dist-app",
+  "android": {
+    "backgroundColor": "#f6f6f4"
+  },
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover"
+    }
+  }
+}
